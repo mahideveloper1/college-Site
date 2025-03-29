@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OxFooter from './Footer';
+// import pic1 from '../assets/pic1.jpg';
 
 const Homepage: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -296,7 +297,7 @@ const Homepage: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="w-full md:w-1/3">
                     <img 
-                      src='/src/assets/pic1.jpg' 
+                      src='https://www.ox.ac.uk/sites/files/oxford/styles/ow_listing/s3/field/field_image_main/TB045-still_03.jpg?itok=0SaaQR57' 
                       alt="TB Trial" 
                       className="w-full h-48 object-cover"
                     />
@@ -311,7 +312,7 @@ const Homepage: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="w-full md:w-1/3">
                     <img 
-                      src='/src/assets/pic2.jpg'
+                      src='https://www.ox.ac.uk/sites/files/oxford/styles/ow_listing/s3/field/field_image_main/Chemistry%20Molecules%20Gold.jpg?itok=IfnaGTuZ'
                       alt="Fluoride Research" 
                       className="w-full h-48 object-cover"
                     />
@@ -326,7 +327,7 @@ const Homepage: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="w-full md:w-1/3">
                     <img 
-                      src='/src/assets/pic3.jpg' 
+                      src='https://www.ox.ac.uk/sites/files/oxford/styles/ow_listing/s3/stoneham_360.jpg?itok=4O-_gjO_' 
                       alt="Church" 
                       className="w-full h-48 object-cover"
                     />
@@ -388,7 +389,7 @@ const Homepage: React.FC = () => {
             {/* Undergraduate admissions */}
             <div className="relative group overflow-hidden">
               <img 
-                src='/src/assets/pic4.jpg'
+                src='https://www.ox.ac.uk/sites/files/oxford/st_ox_undergrad3.jpg'
                 alt="Undergraduate students" 
                 className="w-full h-64 object-cover"
               />
@@ -403,7 +404,7 @@ const Homepage: React.FC = () => {
             {/* Graduate admissions */}
             <div className="relative group overflow-hidden">
               <img 
-                src='/src/assets/pic5.jpg' 
+                src='https://www.ox.ac.uk/sites/files/oxford/st_ox_grad2.jpg' 
                 alt="Graduate students" 
                 className="w-full h-64 object-cover"
               />
@@ -418,7 +419,7 @@ const Homepage: React.FC = () => {
             {/* Continuing education */}
             <div className="relative group overflow-hidden">
               <img 
-                src='/src/assets/pic6.jpg'  
+                src='https://www.ox.ac.uk/sites/files/oxford/st_ox_conted2.jpg'  
                 alt="Continuing education" 
                 className="w-full h-64 object-cover"
               />
@@ -433,7 +434,7 @@ const Homepage: React.FC = () => {
             {/* Current Oxford students */}
             <div className="relative group overflow-hidden">
               <img 
-                src='/src/assets/pic7.jpg'  
+                src='https://www.ox.ac.uk/sites/files/oxford/st_ox_current2.jpg'  
                 alt="Current Oxford students" 
                 className="w-full h-64 object-cover"
               />
