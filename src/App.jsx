@@ -1,9 +1,10 @@
 import React from 'react'
+import Homepage from './components/first'
 
 function App() {
   return (
-    <div className='text-red-500'>
-      This is a React Page and Tailwindcss is working fine
+    <div>
+      <Homepage />
     </div>
   )
 }
