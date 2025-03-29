@@ -8,13 +8,13 @@ const Homepage: React.FC = () => {
   // Images for slider
   const sliderImages = [
     {
-      src: '/src/assets/modi.jpg',
+      src: 'https://ptsnsuniversity.ac.in/web-admin/ptsn_home/slider_img/fzG0nmJf3NHv.jpg',
       alt: 'Modi Image',
       title: "WELCOME TO PANDIT S. N. SHUKLA UNIVERSITY",
       subtitle: "Take a look at which graduate courses are still accepting applications for entry in 2025–26"
     },
     {
-      src: '/src/assets/collage.jpg',
+      src: 'https://ptsnsuniversity.ac.in/web-admin/ptsn_home/slider_img/collage.jpg',
       alt: 'College Collage',
       title: "DISCOVER OUR ACADEMIC EXCELLENCE",
       subtitle: "Join our diverse community of scholars and researchers making a difference"
@@ -62,7 +62,7 @@ const Homepage: React.FC = () => {
           {/* Logo and University Name */}
           <div className="flex items-center">
             <img 
-              src='/src/assets/logo3.png'
+              src='https://ptsnsuniversity.ac.in/website/assets/images/resources/PTSNSU%20Website%202023.png'
               alt="PSNSU Logo" 
               className="h-24 w-auto mr-4" 
             />
@@ -190,7 +190,7 @@ const Homepage: React.FC = () => {
           <nav className="flex items-center">
             <div className="py-2 pr-4">
               <img 
-                src='/src/assets/logo3.png'
+                src='https://ptsnsuniversity.ac.in/website/assets/images/resources/PTSNSU%20Website%202023.png'
                 alt="PSNSU Logo" 
                 className="h-10 w-auto" 
               />
