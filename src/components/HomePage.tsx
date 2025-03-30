@@ -36,11 +36,12 @@ const Homepage = () => {
       {/* News and Events Section */}
       <NewsEvents />
       
-      {/* Studying at PTSN Section */}
-      <StudyInfo />
+      
 
       <UniversityFacilities />
 
+      {/* Studying at PTSN Section */}
+      <StudyInfo />
       <StudentTestimonials />
       
       {/* Footer */}
