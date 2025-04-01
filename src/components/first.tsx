@@ -9,6 +9,7 @@ import Study from './study';
 import Testimonial from "./Testimonials"
 import Stats from "./Stats"
 import UniversityFacilities from './facilities';
+import Header from './Header'
 
 
 const Homepage: React.FC = () => {
@@ -69,7 +70,7 @@ const Homepage: React.FC = () => {
       {/* Top Navigation Bar */}
       <header className=" text-white font-bold">
         {/* <Header></Header> */}
-
+         <Header/>
         {/* Main Navigation Menu */}
         
         <Navbar></Navbar>

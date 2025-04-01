@@ -1,11 +1,11 @@
 import React from 'react'
 import Homepage from './components/first'
-import Header from './components/Header'
+// import Header from './components/Header'
 
 function App() {
   return (
     <div>
-  <Header/>
+  {/* <Header/> */}
    <Homepage />
     </div>
   )
