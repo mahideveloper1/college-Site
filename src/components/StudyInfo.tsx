@@ -4,7 +4,7 @@ const StudyInfo = () => {
   const studyOptions = [
     {
       image: 'https://www.ox.ac.uk/sites/files/oxford/st_ox_undergrad3.jpg',
-      title: 'Undergraduate admissions',
+      title: 'Under',
       alt: 'Undergraduate students'
     },
     {

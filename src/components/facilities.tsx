@@ -13,14 +13,14 @@ const facilities = [
     id: 2,
     title: "Advanced Research Labs",
     description: "Our cutting-edge research facilities include specialized labs for biotechnology, material science, computer vision, and quantum computing, supporting groundbreaking research across disciplines.",
-    image: "https://images.unsplash.com/photo-1581092921461-fd0e5530d0c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
+    image: "https://web.mit.edu/files/images/201806/02_preview.jpeg",
     icon: "🧪"
   },
   {
     id: 3,
     title: "Sports Complexes",
     description: "Our Olympic-sized swimming pool, multipurpose indoor courts, fitness centers, and outdoor fields encourage students to maintain an active lifestyle and participate in competitive sports.",
-    image: "https://images.unsplash.com/photo-1590227632180-80c10da59efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
+    image: "https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
     icon: "🏆"
   },
   {
@@ -48,19 +48,25 @@ const facilities = [
 
 function UniversityFacilities() {
   const [activeTab, setActiveTab] = useState(facilities[0].id);
+  const [hoveredTab, setHoveredTab] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-[#001530] to-[#002147] text-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-br from-amber-50 to-amber-100 text-amber-900 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-amber-200/10 rounded-full blur-2xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section heading */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4">
+          <h2 className="text-5xl font-bold mb-4 text-amber-800">
             <span className="inline-block relative">
               World-Class Facilities
-              <div className="absolute -bottom-3 left-0 right-0 h-1 bg-yellow-400 transform -skew-x-12"></div>
+              <div className="absolute -bottom-3 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-full"></div>
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
+          <p className="text-xl text-amber-700 max-w-3xl mx-auto mt-6">
             Our state-of-the-art infrastructure is designed to support academic excellence, 
             research innovation, and holistic student development.
           </p>
@@ -70,18 +76,22 @@ function UniversityFacilities() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left sidebar tabs */}
           <div className="lg:col-span-4 order-2 lg:order-1">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden">
+            <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-amber-200">
               {facilities.map((facility) => (
                 <button
                   key={facility.id}
                   className={`w-full text-left p-4 border-l-4 transition-all duration-300 flex items-center ${
                     activeTab === facility.id
-                      ? "border-yellow-400 bg-white/10"
-                      : "border-transparent hover:border-yellow-400/50 hover:bg-white/5"
+                      ? "border-amber-500 bg-amber-50"
+                      : "border-transparent hover:border-amber-300 hover:bg-amber-50/50"
                   }`}
                   onClick={() => setActiveTab(facility.id)}
+                  onMouseEnter={() => setHoveredTab(facility.id)}
+                  onMouseLeave={() => setHoveredTab(null)}
                 >
-                  <span className="text-2xl mr-3">{facility.icon}</span>
+                  <span className={`text-2xl mr-3 transition-transform duration-300 ${
+                    hoveredTab === facility.id ? "transform scale-125" : ""
+                  }`}>{facility.icon}</span>
                   <span className="font-semibold">{facility.title}</span>
                 </button>
               ))}
@@ -97,31 +107,30 @@ function UniversityFacilities() {
                   activeTab === facility.id ? "opacity-100" : "opacity-0 hidden"
                 }`}
               >
-                <div className="overflow-hidden rounded-xl shadow-2xl relative group">
-                  {/* Facility image */}
+                <div className="overflow-hidden rounded-xl shadow-lg relative group border border-amber-200">
+                  {/* Facility image - without overlay gradient */}
                   <div className="relative h-96 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#001530]/80 to-transparent z-10"></div>
                     <img
                       src={facility.image}
                       alt={facility.title}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
                     
-                    {/* Content overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                      <h3 className="text-3xl font-bold mb-3">
+                    {/* Content overlay - with background to ensure text readability */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black/70 to-transparent">
+                      <h3 className="text-3xl font-bold mb-3 text-white">
                         {facility.title}
                       </h3>
-                      <p className="text-gray-200 text-lg">
+                      <p className="text-white text-lg">
                         {facility.description}
                       </p>
                       
                       {/* CTA Button */}
-                      <button className="mt-6 px-6 py-2 bg-yellow-400 text-[#002147] font-semibold rounded-lg hover:bg-yellow-300 transition-colors flex items-center group">
+                      <button className="mt-6 px-6 py-2 bg-gradient-to-r from-amber-400 to-yellow-300 text-amber-900 font-semibold rounded-lg hover:from-amber-300 hover:to-yellow-200 transition-all duration-300 shadow-md flex items-center group">
                         Learn more
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" 
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -146,9 +155,12 @@ function UniversityFacilities() {
                     { label: "Sq. Meters", value: facility.id * 1500 },
                     { label: "Investment", value: "$" + (facility.id * 2.5).toFixed(1) + "M" }
                   ].map((stat, index) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                      <div className="text-2xl font-bold">{stat.value}</div>
-                      <div className="text-sm text-gray-300">{stat.label}</div>
+                    <div 
+                      key={index} 
+                      className="bg-white rounded-lg p-4 text-center hover:bg-amber-50 transition-all duration-300 border border-amber-200 hover:transform hover:scale-105 shadow-md hover:shadow-lg"
+                    >
+                      <div className="text-2xl font-bold text-amber-600">{stat.value}</div>
+                      <div className="text-sm text-amber-700">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -157,6 +169,9 @@ function UniversityFacilities() {
           </div>
         </div>
       </div>
+
+      {/* Decorative divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-amber-100/0 via-amber-300/30 to-amber-100/0"></div>
     </section>
   );
 }

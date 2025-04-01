@@ -2,19 +2,20 @@ import React from 'react';
 
 function Study() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="py-16 sm:py-24 border-t border-gray-100">
+    <div className="bg-gradient-to-b from-amber-50 to-white">
+      <div className="py-16 sm:py-24 border-t border-amber-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-[#040434] mb-4 tracking-tight">
+          <h2 className="text-4xl font-extrabold text-amber-800 mb-4 tracking-tight">
             STUDYING AT PTSN
+            <div className="h-1 w-32 bg-gradient-to-r from-amber-400 to-yellow-300 mt-2 rounded-full"></div>
           </h2>
-          <p className="text-gray-600 mb-12 max-w-3xl text-lg">
+          <p className="text-amber-700 mb-12 max-w-3xl text-lg">
             Discover your academic journey through our diverse range of programs and opportunities
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Undergraduate admissions */}
-            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-amber-100">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"/>
               <img 
                 src='https://www.ox.ac.uk/sites/files/oxford/st_ox_undergrad3.jpg'
@@ -37,7 +38,7 @@ function Study() {
             </div>
 
             {/* Graduate admissions */}
-            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-amber-100">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"/>
               <img 
                 src='https://www.ox.ac.uk/sites/files/oxford/st_ox_grad2.jpg' 
@@ -60,7 +61,7 @@ function Study() {
             </div>
 
             {/* Continuing education */}
-            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-amber-100">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"/>
               <img 
                 src='https://www.ox.ac.uk/sites/files/oxford/st_ox_conted2.jpg'  
@@ -83,7 +84,7 @@ function Study() {
             </div>
 
             {/* Current PTSN students */}
-            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <div className="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-amber-100">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"/>
               <img 
                 src='https://www.ox.ac.uk/sites/files/oxford/st_ox_current2.jpg'  

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import OxFooter from './Footer';
 // import pic1 from '../assets/pic1.jpg';
 import Navbar from './Navbar';
-import Header from "./Header"
 import { GraduationCap, Bell, Search, ExternalLink, ChevronDown, Users, Building2, School, Users2 } from 'lucide-react';
 import Vc from './Vc';
 import News from "./News"

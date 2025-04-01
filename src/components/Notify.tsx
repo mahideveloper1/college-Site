@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
-import { Bell, Search, Menu, ChevronDown, User } from 'lucide-react';
+// import { Bell, Search, Menu, ChevronDown, User } from 'lucide-react';
 
 const Notify = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-
+    <header className="bg-white shadow-md sticky z-50">
+      <div className="container mx-auto px-4 py-0 flex items-center justify-between">
         {/* Left Section - Logo & Title */}
 
-
         {/* Right Section - Search, Notification, Profile */}
-
       </div>
 
       {/* Running Notification Bar */}
-      <div className=" text-black py-1 overflow-hidden">
+      <div className="bg-amber-100 text-amber-800 py-1 overflow-hidden">
         <div className="whitespace-nowrap animate-marquee text-xl font-semibold">
            Admissions Open for 2025! Apply Now&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Check the Academics Section&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Upcoming Event: University Convocation on April 15th 
         </div>
@@ -31,7 +28,7 @@ const Notify = () => {
           }
           .animate-marquee {
             display: inline-block;
-            animation: marquee 10s linear infinite;
+            animation: marquee 30s linear infinite;
           }
         `}
       </style>
