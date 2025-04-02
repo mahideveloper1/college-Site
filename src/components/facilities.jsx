@@ -48,51 +48,51 @@ const facilities = [
 
 function UniversityFacilities() {
   const [activeTab, setActiveTab] = useState(facilities[0].id);
-  const [hoveredTab, setHoveredTab] = useState<number | null>(null);
+  const [hoveredTab, setHoveredTab] = useState(null);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-amber-50 to-amber-100 text-amber-900 relative overflow-hidden">
+    <section className="py-8 md:py-16 bg-gradient-to-br from-amber-50 to-amber-100 text-amber-900 relative overflow-hidden shadow-lg">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-amber-200/10 rounded-full blur-2xl"></div>
+      <div className="absolute top-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-yellow-300/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-yellow-200/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-32 md:w-64 h-32 md:h-64 bg-amber-200/10 rounded-full blur-2xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4 text-amber-800">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-amber-800">
             <span className="inline-block relative">
               World-Class Facilities
               <div className="absolute -bottom-3 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-full"></div>
             </span>
           </h2>
-          <p className="text-xl text-amber-700 max-w-3xl mx-auto mt-6">
+          <p className="text-lg md:text-xl text-amber-700 max-w-3xl mx-auto mt-4 md:mt-6">
             Our state-of-the-art infrastructure is designed to support academic excellence, 
             research innovation, and holistic student development.
           </p>
         </div>
 
         {/* Main content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left sidebar tabs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-start">
+          {/* Left sidebar tabs - on small screens appears below content */}
           <div className="lg:col-span-4 order-2 lg:order-1">
-            <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-amber-200">
+            <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-amber-200 flex flex-row flex-wrap lg:flex-col">
               {facilities.map((facility) => (
                 <button
                   key={facility.id}
-                  className={`w-full text-left p-4 border-l-4 transition-all duration-300 flex items-center ${
+                  className={`text-left p-3 md:p-4 border-l-4 transition-all duration-300 flex items-center ${
                     activeTab === facility.id
                       ? "border-amber-500 bg-amber-50"
                       : "border-transparent hover:border-amber-300 hover:bg-amber-50/50"
-                  }`}
+                  } ${window.innerWidth < 1024 ? "flex-1 min-w-[50%]" : "w-full"}`}
                   onClick={() => setActiveTab(facility.id)}
                   onMouseEnter={() => setHoveredTab(facility.id)}
                   onMouseLeave={() => setHoveredTab(null)}
                 >
-                  <span className={`text-2xl mr-3 transition-transform duration-300 ${
+                  <span className={`text-xl md:text-2xl mr-2 md:mr-3 transition-transform duration-300 ${
                     hoveredTab === facility.id ? "transform scale-125" : ""
                   }`}>{facility.icon}</span>
-                  <span className="font-semibold">{facility.title}</span>
+                  <span className="font-semibold text-sm md:text-base">{facility.title}</span>
                 </button>
               ))}
             </div>
@@ -108,29 +108,29 @@ function UniversityFacilities() {
                 }`}
               >
                 <div className="overflow-hidden rounded-xl shadow-lg relative group border border-amber-200">
-                  {/* Facility image - without overlay gradient */}
-                  <div className="relative h-96 overflow-hidden">
+                  {/* Facility image with adaptive height */}
+                  <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
                     <img
                       src={facility.image}
                       alt={facility.title}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
                     
-                    {/* Content overlay - with background to ensure text readability */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black/70 to-transparent">
-                      <h3 className="text-3xl font-bold mb-3 text-white">
+                    {/* Content overlay with responsive text */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 z-20 bg-gradient-to-t from-black/70 to-transparent">
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-white">
                         {facility.title}
                       </h3>
-                      <p className="text-white text-lg">
+                      <p className="text-white text-sm md:text-base lg:text-lg">
                         {facility.description}
                       </p>
                       
                       {/* CTA Button */}
-                      <button className="mt-6 px-6 py-2 bg-gradient-to-r from-amber-400 to-yellow-300 text-amber-900 font-semibold rounded-lg hover:from-amber-300 hover:to-yellow-200 transition-all duration-300 shadow-md flex items-center group">
+                      <button className="mt-4 md:mt-6 px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-amber-400 to-yellow-300 text-amber-900 font-semibold rounded-lg hover:from-amber-300 hover:to-yellow-200 transition-all duration-300 shadow-md flex items-center group text-sm md:text-base">
                         Learn more
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" 
+                          className="h-4 w-4 md:h-5 md:w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" 
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -147,8 +147,8 @@ function UniversityFacilities() {
                   </div>
                 </div>
 
-                {/* Stats cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                {/* Stats cards - responsive grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-4 md:mt-6">
                   {/* Each facility has 3 stats */}
                   {[
                     { label: "Students Served", value: "12,000+" },
@@ -157,10 +157,10 @@ function UniversityFacilities() {
                   ].map((stat, index) => (
                     <div 
                       key={index} 
-                      className="bg-white rounded-lg p-4 text-center hover:bg-amber-50 transition-all duration-300 border border-amber-200 hover:transform hover:scale-105 shadow-md hover:shadow-lg"
+                      className="bg-white rounded-lg p-3 md:p-4 text-center hover:bg-amber-50 transition-all duration-300 border border-amber-200 hover:transform hover:scale-105 shadow-md hover:shadow-lg"
                     >
-                      <div className="text-2xl font-bold text-amber-600">{stat.value}</div>
-                      <div className="text-sm text-amber-700">{stat.label}</div>
+                      <div className="text-xl md:text-2xl font-bold text-amber-600">{stat.value}</div>
+                      <div className="text-xs md:text-sm text-amber-700">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -171,9 +171,31 @@ function UniversityFacilities() {
       </div>
 
       {/* Decorative divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-amber-100/0 via-amber-300/30 to-amber-100/0"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-3 md:h-6 bg-gradient-to-r from-amber-100/0 via-amber-300/30 to-amber-100/0"></div>
     </section>
   );
 }
 
-export default UniversityFacilities;
+// Add responsive event listener to handle window resize
+function ResponsiveUniversityFacilities() {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  
+  // Add resize listener when component mounts
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return <UniversityFacilities windowWidth={windowWidth} />;
+}
+
+export default ResponsiveUniversityFacilities;
